@@ -1,7 +1,7 @@
-import React from 'react';
+import React, { useReducer, createContext } from 'react';
 import { serieReducer, IAction } from "../reducers/serieReducer";
 
-export type IEpisode = {
+export interface IEpisode {
     id: number;
     name: string;
     summary: string;
@@ -12,7 +12,7 @@ export type IEpisode = {
     season: number;
 };
 
-export type IState = {
+export interface IState {
     episodes: IEpisode[];
     favorites: IEpisode[];
 };
@@ -22,15 +22,15 @@ const initialState: IState = {
     favorites: []
 };
 
-export type IProvidedValue = {
+export interface IProvidedValue {
     state: IState;
     dispatch: React.Dispatch<IAction>;
 };
 
-export const SerieContext = React.createContext<IProvidedValue | null>(null);
+export const SerieContext = createContext<IProvidedValue | null>(null);
 
 export const SerieProvider = ({ children }: React.PropsWithChildren<React.ReactNode>) => {
-    const [state, dispatch] = React.useReducer(serieReducer, initialState);
+    const [state, dispatch] = useReducer(serieReducer, initialState);
     
     return (
         <SerieContext.Provider value={{state, dispatch}}>

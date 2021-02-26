@@ -9,7 +9,7 @@ const BackgroundBlur = styled.div`
     position: fixed;
     top: 0;
     left: 0;
-    z-index: 10;
+    z-index: 20;
     opacity: 0.90;
     background-color: #fff;
 `;
@@ -18,7 +18,7 @@ const EpisodeQuickViewContainer = styled.div`
     width: 100%;
     max-width: 700px;
     position: fixed;
-    z-index: 10;
+    z-index: 30;
     top: 50%;
     left: 50%;
     padding: 40px;

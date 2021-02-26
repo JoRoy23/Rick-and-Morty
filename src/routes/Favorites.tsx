@@ -1,14 +1,18 @@
 import React from 'react';
 import styled from "styled-components";
-import Episode from "../episodes/Episode";
-import { IEpisode } from "../../context/providers/SerieProvider";
+import Episode from "../components/episodes/Episode";
+import { IEpisode } from "../context/providers/SerieProvider";
 
 const FavoritesPage = styled.section`
-    padding-top: 110px;
+    padding-top: 100px;
 
     @media screen and (min-width: 1600px) {
         width: 1440px;
         margin: 0 auto;
+    }
+
+    > h2 {
+        padding: 0 10px;
     }
 `;
 

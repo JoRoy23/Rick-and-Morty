@@ -12,7 +12,6 @@ export type IAction =
 export const serieReducer = (state: IState, action: IAction): IState => {
     switch (action.type) {
         case "fetch_data":
-
             return {...state, episodes: (action.payload as IEpisode[])};
 
         case "add_to_favorite":

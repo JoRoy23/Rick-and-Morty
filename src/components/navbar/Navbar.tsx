@@ -1,20 +1,21 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { NavLink } from "react-router-dom";
 import styled from "styled-components";
 import NavLogo from "./assets/rick-and-morty.png"
 
-const NavbarContainer = styled.nav`
+const NavbarContainer = styled.div`
     position: fixed;
     top: 0;
     left: 0;
-    z-index: 100;
+    z-index: 10;
     width: 100%;
     display: flex;
     align-items: center;
     justify-content: space-between;
     padding: 0 40px;
-    box-shadow: 0 8px 6px -6px #777;
     background-color: #fff;
+    box-shadow: none;
+    transition: box-shadow 0.2s ease-In-Out;
 
     @media screen and (min-width: 1600px) {
         padding-left: calc((100% - 1420px) / 2);
@@ -24,6 +25,11 @@ const NavbarContainer = styled.nav`
     > img {
         width: 90px;
 
+    }
+
+    &.navbar--shadow {
+        box-shadow: 0 8px 6px -6px #777;
+        transition: box-shadow 0.2s ease-In-Out;
     }
 `;
 
@@ -56,8 +62,26 @@ const NavbarRight = styled.div`
 `;
 
 const Navbar = () => {
+    useEffect(() => {
+        window.addEventListener("scroll", () => {
+            function handleNavbarStyle() {
+                const navbar = document.querySelector(".navbar") as HTMLDivElement;
+
+                if (window.pageYOffset > 20) {
+                    navbar.classList.add("navbar--shadow");
+                } else {
+                    navbar.classList.remove("navbar--shadow");
+                }
+            };
+            
+            handleNavbarStyle()
+            
+            return handleNavbarStyle;
+        })
+    }, [])
+
     return (
-        <NavbarContainer>
+        <NavbarContainer className="navbar">
             <img src={NavLogo} alt="Rick and Morty Logo"/>
             <NavbarRight>
                 <NavLink exact to="/" activeClassName="navLinkSelected">Episodes</NavLink>

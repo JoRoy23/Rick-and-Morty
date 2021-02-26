@@ -1,8 +1,8 @@
 import React, { useEffect, useContext } from 'react';
 import { Switch, Route } from "react-router-dom";
 import styled from "styled-components";
-import Episodes from "../episodes/Episodes";
-import Favorites from "../favorites/Favorites";
+import Episodes from "../../routes/Episodes";
+import Favorites from "../../routes/Favorites";
 import Navbar from "../navbar/Navbar";
 import { fetchEpisodes } from "../../api/fetchEpisodes";
 import { SerieContext } from "../../context/providers/SerieProvider";

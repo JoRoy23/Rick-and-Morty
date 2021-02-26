@@ -1,10 +1,10 @@
 import React from 'react';
 import styled from "styled-components";
-import Episode from "./Episode";
-import { IEpisode } from "../../context/providers/SerieProvider";
+import Episode from "../components/episodes/Episode";
+import { IEpisode } from "../context/providers/SerieProvider";
 
 const EpisodesPage = styled.section`
-    padding-top: 110px;
+    padding-top: 100px;
 `;
 
 const EpisodesHeader = styled.header`
