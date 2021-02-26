@@ -14,7 +14,6 @@ const NavbarContainer = styled.div`
     justify-content: space-between;
     padding: 0 40px;
     background-color: #fff;
-    box-shadow: none;
     transition: box-shadow 0.2s ease-In-Out;
 
     @media screen and (min-width: 1600px) {
@@ -39,6 +38,12 @@ const NavbarRight = styled.div`
         font-size: 16px;
         font-weight: 600;
         color: #000;
+        transition: color 0.2s ease-in-out;
+
+        &:hover {
+            color: rgba(154, 193, 232, 1);
+            transition: color 0.2s ease-in-out;
+        }
 
         &:first-child {
             margin-right: 30px;

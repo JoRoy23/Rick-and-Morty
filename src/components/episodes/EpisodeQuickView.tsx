@@ -24,7 +24,6 @@ const EpisodeQuickViewContainer = styled.div`
     padding: 40px;
     transform: translate(-50%, -50%);
     box-shadow: 0 15px 10px #777;
-;
     background-color: #fff;
 
     > img {
@@ -35,6 +34,12 @@ const EpisodeQuickViewContainer = styled.div`
     > .MuiSvgIcon-root {
         margin-bottom: 10px;
         cursor: pointer;
+        transition: scale 0.3s ease-in-out;
+
+        &:hover {
+            transform: scale(1.1);
+            transition: scale 0.3s ease-in-out;
+        }
     }
 `;
 

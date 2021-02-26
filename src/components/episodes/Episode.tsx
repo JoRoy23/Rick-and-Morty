@@ -41,6 +41,12 @@ const EpisodeIcons = styled.div`
 
     > .MuiSvgIcon-root {
         cursor: pointer;
+        transition: scale 0.3s ease-in-out;
+
+        &:hover {
+            transform: scale(1.1);
+            transition: scale 0.3s ease-in-out;
+        }
 
         &:first-child {
             margin-right: 10px;
@@ -68,6 +74,7 @@ const Episode = ({ episode }: IEpisodeProps) => {
                 payload: episode
             })
         )
+
         
     };
 
