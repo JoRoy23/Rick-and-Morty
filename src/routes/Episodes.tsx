@@ -14,6 +14,10 @@ const EpisodesHeader = styled.header`
         width: 1440px;
         margin: 0 auto;
     }
+
+    > h1 {
+        margin-bottom: 7px;
+    }
 `;
 
 const EpisodesContainer = styled.div`
